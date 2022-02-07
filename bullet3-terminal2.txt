@@ -1,0 +1,109 @@
+Microsoft Windows [Version 10.0.19042.1466]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\delyar>docker ps
+CONTAINER ID   IMAGE                           COMMAND                  CREATED              STATUS              PORTS     NAMES
+70d040af8706   rustlang/rust:nightly           "bash -c 'curl -o- h…"   About a minute ago   Up About a minute             lab_dev_run_71541c032bec
+269971493ddc   rustlang/rust:nightly           "bash -c 'curl -o- h…"   19 minutes ago       Up 19 minutes                 lab_dev_run_cec4b70a1f6a
+57d19ee8c35f   rustlang/rust:nightly           "bash -c 'curl -o- h…"   30 minutes ago       Up 30 minutes                 lab_dev_run_cd1862ad6dd9
+5f326b146695   swiftlang/swift:nightly-focal   "bash"                   38 minutes ago       Up 38 minutes                 lab_dev_run_2e215102d800
+f777d58777e3   swiftlang/swift:nightly-focal   "bash"                   About an hour ago    Up About an hour              lab_dev_run_a9c560bec07f
+
+C:\Users\delyar>docker exec -it 70d040af8706  bash
+root@70d040af8706:/# ls
+bin  boot  code  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@70d040af8706:/# cd code
+root@70d040af8706:/code# cd cs561-rust
+root@70d040af8706:/code/cs561-rust# ls
+Cargo.lock  Cargo.toml  src  target
+root@70d040af8706:/code/cs561-rust# cargo run
+    Updating crates.io index
+  Downloaded mime v0.3.16
+  Downloaded num_cpus v1.13.1
+  Downloaded parking_lot v0.11.2
+  Downloaded percent-encoding v2.1.0
+  Downloaded proc-macro2 v1.0.36
+  Downloaded ryu v1.0.9
+  Downloaded scopeguard v1.1.0
+  Downloaded unicode-xid v0.2.2
+  Downloaded tracing v0.1.29
+  Downloaded url v2.2.2
+  Downloaded httparse v1.5.1
+  Downloaded indexmap v1.7.0
+  Downloaded mio v0.7.14
+  Downloaded signal-hook-registry v1.4.0
+  Downloaded try-lock v0.2.3
+  Downloaded unicode-bidi v0.3.7
+  Downloaded reqwest v0.11.8
+  Downloaded socket2 v0.4.2
+  Downloaded unicode-normalization v0.1.19
+  Downloaded tokio-native-tls v0.3.0
+  Downloaded want v0.3.0
+  Downloaded tokio-util v0.6.9
+  Downloaded syn v1.0.84
+  Downloaded tinyvec v1.5.1
+  Downloaded tokio-macros v1.7.0
+  Downloaded serde_json v1.0.73
+  Downloaded tokio v1.15.0
+  Downloaded once_cell v1.9.0
+  Downloaded fnv v1.0.7
+  Downloaded serde_derive v1.0.132
+  Downloaded serde v1.0.132
+  Downloaded quote v1.0.14
+  Downloaded openssl-sys v0.9.72
+  Downloaded native-tls v0.2.8
+  Downloaded tracing-core v0.1.21
+  Downloaded tower-service v0.3.1
+  Downloaded tinyvec_macros v0.1.0
+  Downloaded smallvec v1.7.0
+  Downloaded serde_urlencoded v0.7.0
+  Downloaded ipnet v2.3.1
+  Downloaded log v0.4.14
+  Downloaded parking_lot_core v0.8.5
+  Downloaded slab v0.4.5
+  Downloaded bitflags v1.3.2
+  Downloaded autocfg v1.0.1
+  Downloaded form_urlencoded v1.0.1
+  Downloaded bytes v1.1.0
+  Downloaded futures-sink v0.3.19
+  Downloaded itoa v0.4.8
+  Downloaded itoa v1.0.1
+  Downloaded lock_api v0.4.5
+  Downloaded openssl-probe v0.1.4
+  Downloaded http v0.2.6
+  Downloaded hyper v0.14.16
+  Downloaded futures-util v0.3.19
+  Downloaded openssl v0.10.38
+  Downloaded futures-task v0.3.19
+  Downloaded libc v0.2.112
+  Downloaded lazy_static v1.4.0
+  Downloaded idna v0.2.3
+  Downloaded encoding_rs v0.8.30
+  Downloaded h2 v0.3.9
+  Downloaded hyper-tls v0.5.0
+  Downloaded foreign-types-shared v0.1.1
+  Downloaded foreign-types v0.3.2
+  Downloaded hashbrown v0.11.2
+  Downloaded instant v0.1.12
+  Downloaded httpdate v1.0.2
+  Downloaded http-body v0.4.4
+  Downloaded futures-channel v0.3.19
+  Downloaded cc v1.0.72
+  Downloaded futures-core v0.3.19
+  Downloaded base64 v0.13.0
+  Downloaded cfg-if v1.0.0
+  Downloaded pkg-config v0.3.24
+  Downloaded pin-utils v0.1.0
+  Downloaded pin-project-lite v0.2.8
+  Downloaded memchr v2.4.1
+  Downloaded matches v0.1.9
+  Downloaded 79 crates (6.0 MB) in 1.39s (largest was `encoding_rs` at 1.4 MB)
+    Finished dev [unoptimized + debuginfo] target(s) in 39.65s
+     Running `target/debug/weather`
+
+Weather from a JSON we hard-coded locally:
+Weather { main: Main { temp: 30.94 } }
+
+Weather from openweathermap.org:
+ Weather { main: Main { temp: 282.61 } }
+root@70d040af8706:/code/cs561-rust#

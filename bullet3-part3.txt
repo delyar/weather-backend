@@ -1,0 +1,72 @@
+Microsoft Windows [Version 10.0.19042.1466]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\delyar>cd C:\Users\delyar\Documents\Lab
+
+C:\Users\delyar\Documents\Lab>docker-compose run --rm client
+Creating lab_client_run ... done
+ ################################################################
+ #                                                              #
+ # Swift Nightly Docker Image                                   #
+ # Tag: swift-DEVELOPMENT-SNAPSHOT-2021-12-23-a                 #
+ #                                                              #
+ ################################################################
+
+root@47190f610f3e:/# curl host.docker.internal:3000/data/2.5/weather
+bash: curl: command not found
+root@47190f610f3e:/# ls
+bin   code  etc   lib    lib64   media  opt   root  sbin  sys  usr
+boot  dev   home  lib32  libx32  mnt    proc  run   srv   tmp  var
+root@47190f610f3e:/# cd code
+root@47190f610f3e:/code# ls
+app.js      cs561-swift  docker-compose.yml   node_modules       package.json
+cs561-rust  delyarlib    mock-weather-server  package-lock.json
+root@47190f610f3e:/code# curl host.docker.internal:3000/data/2.5/weather
+bash: curl: command not found
+root@47190f610f3e:/code# cd cs561-swift
+root@47190f610f3e:/code/cs561-swift# curl host.docker.internal:3000/data/2.5/weather
+bash: curl: command not found
+root@47190f610f3e:/code/cs561-swift# cd ..
+root@47190f610f3e:/code# ls
+app.js      cs561-swift  docker-compose.yml   node_modules       package.json
+cs561-rust  delyarlib    mock-weather-server  package-lock.json
+root@47190f610f3e:/code# apt-get update
+Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
+Get:3 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [889 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages [1275 kB]
+Get:7 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [1470 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
+Get:9 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [839 kB]
+Get:10 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [30.1 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/restricted amd64 Packages [33.4 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [177 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [952 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1121 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [1895 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [33.7 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [23.8 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [50.8 kB]
+Fetched 20.7 MB in 55s (375 kB/s)
+Reading package lists... Done
+root@47190f610f3e:/code# apt-get install curl
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  curl
+0 upgraded, 1 newly installed, 0 to remove and 5 not upgraded.
+Need to get 161 kB of archives.
+After this operation, 412 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 curl amd64 7.68.0-1ubuntu2.7 [161 kB]
+Fetched 161 kB in 11s (14.7 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package curl.
+(Reading database ... 16673 files and directories currently installed.)
+Preparing to unpack .../curl_7.68.0-1ubuntu2.7_amd64.deb ...
+Unpacking curl (7.68.0-1ubuntu2.7) ...
+Setting up curl (7.68.0-1ubuntu2.7) ...
+root@47190f610f3e:/code# curl host.docker.internal:3000/data/2.5/weather
+{"coord":{"lon":-123.262,"lat":44.5646},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":282.61,"feels_like":282.61,"temp_min":280.58,"temp_max":285.29,"pressure":1018,"humidity":84},"visibility":10000,"wind":{"speed":0.89,"deg":225,"gust":0.89},"clouds":{"all":0},"dt":1642038root@47190f610f3e:/code#
