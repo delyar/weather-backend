@@ -33,7 +33,7 @@ function post_auth(req,res){
 
     if(usernames.includes(username)){
       if(passwords.includes(pwd)){
-          res.json({ "Sucess" : "Your API key is here: never-ever-reveal-your-token"})
+          res.json({ "Sucess" : "Your API key is here: 53f0a8a769a368154b48b7a48ee1bb0f"})
       }
   }
 }
