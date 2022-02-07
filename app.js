@@ -20,12 +20,12 @@ function get_weather_v1(request, response) {
 
 function get_hello(req,res){
     //res.set('content-type', 'application/json')
-    res.json({"hello": "Hi I am Pavan"})
+    res.json({"hello": "Hi I am Delyar"})
 }
 // const fs = require("fs");
 app.post('/v1/auth',post_auth)
 function post_auth(req,res){
-    let usernames = ['Pavan','Virat','Sai']
+    let usernames = ['Delyar','Taba','hi']
     let passwords = ['123','456','789']
     // const obj = JSON.parse(req.body)
     let username = req.body.username
